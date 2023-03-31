@@ -43,7 +43,7 @@ function Home({ contract, account }) {
     <div>
       <button onClick={getPatient}>Get Records</button>
       <div>
-        {/* <p>Patient Name: {patientInfo[0]}</p>
+        <p>Patient Name: {patientInfo[0]}</p>
         <p>Patient Address: {patientRecords.patientAddress}</p>
         <p>Doctor Name: {patientRecords.doctorName}</p>
         <p>Symptoms: {patientRecords.symptoms}</p>
@@ -52,7 +52,7 @@ function Home({ contract, account }) {
         <p>Treatment: {patientRecords.treatment}</p>
         <p>Medication: {patientRecords.Medication}</p>
         <p>Details: {patientRecords.details}</p>
-        <p>Bills: {patientRecords.bill}</p> */}
+        <p>Bills: {patientRecords.bill}</p>
       </div>
     </div>
   );
