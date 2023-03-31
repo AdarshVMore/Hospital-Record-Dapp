@@ -5,7 +5,7 @@ import { PAddressRef } from "../../topNav/TopNav";
 function Home({ contract, account }) {
   const [isDoc, setIsDoc] = useState(false);
   const [patientInfo, setPatientInfo] = useState([]);
-  const [patientRecords, setPatientRecords] = useState([]);
+
   let addr;
   useEffect(() => {
     const getDoctorList = async () => {
@@ -32,27 +32,36 @@ function Home({ contract, account }) {
     console.log(addr);
 
     const Info = await contract.get_patient(addr);
-    console.log(patientInfo);
-    const Records = await contract.get_patient_records(addr);
+    console.log(Info);
     setPatientInfo(Info);
-    setPatientRecords(Records);
-    console.log(patientInfo);
-    console.log(patientRecords);
+    console.log(
+      patientInfo,
+      patientInfo[2][0].patientAddress
+      // patientInfo[2].length
+    );
   };
   return (
     <div>
       <button onClick={getPatient}>Get Records</button>
       <div>
         <p>Patient Name: {patientInfo[0]}</p>
-        <p>Patient Address: {patientRecords.patientAddress}</p>
-        <p>Doctor Name: {patientRecords.doctorName}</p>
-        <p>Symptoms: {patientRecords.symptoms}</p>
-        <p>Diagnosis: {patientRecords.diagnosis}</p>
-        <p>Reports: {patientRecords.report}</p>
-        <p>Treatment: {patientRecords.treatment}</p>
-        <p>Medication: {patientRecords.Medication}</p>
-        <p>Details: {patientRecords.details}</p>
-        <p>Bills: {patientRecords.bill}</p>
+        <div className="records">
+          <div className="article">
+            {patientInfo[2].map((record, i) => (
+              <div key={i} className="article">
+                <p>Patient Address: {record.patientAddress}</p>
+                <p>Doctor Name: {record.doctorName}</p>
+                <p>Symptoms: {record.symptoms}</p>
+                <p>Diagnosis: {record.diagnosis}</p>
+                <p>Reports: {record.report}</p>
+                <p>Treatment: {record.treatment}</p>
+                <p>Medication: {record.Medication}</p>
+                <p>Details: {record.details}</p>
+                <p>Bills: {record.bill}</p>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
     </div>
   );
