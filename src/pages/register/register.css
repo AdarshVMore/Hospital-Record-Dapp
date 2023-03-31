@@ -1,0 +1,65 @@
+.register_box,
+.circle {
+  text-align: center;
+}
+
+.register_box h5 {
+  background-color: white;
+  color: var(--oncolor-text);
+  border-radius: 0.5px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  text-align: center;
+  border-radius: 10px;
+}
+
+.register {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  top: -60px;
+  font-size: larger;
+}
+.circle {
+  margin-top: 12px;
+}
+
+input {
+  display: block;
+  border-radius: 3px;
+  padding: 5px 0px 5px 0px;
+  text-align: center;
+  margin: 17px 0px 17px 0px;
+  color: var(--oncolor-text);
+  border-radius: 10px;
+}
+input {
+  background-color: white;
+  width: 350px;
+  text-align: center;
+}
+
+.box_2 button {
+  margin: 17px 0px 17px 0px;
+  display: block;
+  border: none;
+  margin-left: 131px;
+}
+
+.box_2 button a {
+  background-color: var(--green);
+  color: var(--oncolor-text);
+  background-color: var(--green);
+  display: block;
+  text-align: center;
+  padding: 8px 19px;
+  border-radius: 10px;
+}
+
+.verify a {
+  background-color: var(--yellow);
+}

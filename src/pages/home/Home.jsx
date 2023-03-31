@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import TopNav from "./components/topNav/TopNav.jsx";
 import Nav2 from "./components/nav2/Nav2.jsx";
 import MainContainer from "./components/mainContainer/MainContainer.jsx";
@@ -13,16 +13,16 @@ function Home({ account, provider, contract }) {
 
       <Routes>
         <Route
-          path="/"
+          path="/*"
           element={
             <>
-              <Nav2 />
-              <MainContainer />
+              <Nav2 contract={contract} account={account} />
+              <MainContainer contract={contract} account={account} />
             </>
           }
         />
         <Route path="/record-info" element={<RecordInfo />} />
-        <Route path="/upload" element={<Upload />} />
+        <Route path="/upload" element={<Upload contract={contract} />} />
       </Routes>
     </div>
   );

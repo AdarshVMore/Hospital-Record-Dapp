@@ -16,8 +16,8 @@ function Register({ contract }) {
     const page = document.getElementById("page").value;
 
     const addingPatient = await contract.add_agent(pname, page, 0);
-    await addingPatient.wait();
     console.log("patient added named", pname, "age:", page);
+    window.location.href = "/home";
   };
 
   const add_doctor = async (e) => {
@@ -25,9 +25,9 @@ function Register({ contract }) {
     const dname = document.getElementById("dname").value;
     const dage = document.getElementById("dage").value;
 
-    const addingDoctor = await contract.add_agent(dname, dage, 0);
-    await addingDoctor.wait();
+    const addingDoctor = await contract.add_agent(dname, dage, 1);
     console.log("Doctor added named", dname, "age:", dage);
+    window.location.href = "/home";
   };
 
   return (

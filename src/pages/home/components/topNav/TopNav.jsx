@@ -1,29 +1,40 @@
 import React from "react";
+import { useState, useEffect, useRef } from "react";
+export let PAddressRef = "";
 
 function TopNav({ contract, account }) {
-  const isDoc = false;
-  const getDoctorList = async () => {
-    const docList = await contract.get_doctor_list();
-    console.log("got doclist");
-    console.log(docList);
-    for (const i = 0; i < docList.length; i++) {
-      const docAccount = docList[i];
-      console.log(docAccount);
-      if (docAccount == account) {
-        isDoc = true;
-      }
-    }
-  };
+  PAddressRef = useRef(null);
+  const [isDoc, setIsDoc] = useState(false);
 
-  getDoctorList();
+  useEffect(() => {
+    const getDoctorList = async () => {
+      const docList = await contract.get_doctor_list();
+      for (let i = 0; i < docList.length; i++) {
+        let docAccount = docList[i];
+        if (docAccount === account) {
+          setIsDoc(true);
+          break;
+        }
+      }
+    };
+
+    getDoctorList();
+  }, [contract, account]);
 
   return (
     <div className="TopNav">
       {isDoc ? (
-        <input type="text" id="search" placeholder="Search for Address" />
-      ) : (
-        ""
-      )}
+        <>
+          <form>
+            <input
+              ref={PAddressRef}
+              type="text"
+              id="search"
+              placeholder="Search for Address"
+            />
+          </form>
+        </>
+      ) : null}
       <button>
         <a href="home/upload">Upload Record</a>
       </button>

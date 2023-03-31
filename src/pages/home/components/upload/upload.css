@@ -1,0 +1,17 @@
+.upload-form {
+  display: flex;
+}
+
+.upload-form form {
+  display: flex;
+  flex-direction: column;
+}
+
+.upload-form .label-input {
+  display: flex;
+  justify-content: space-between;
+}
+.upload-form .label-input textarea {
+  width: 20vw;
+  resize: none;
+}
