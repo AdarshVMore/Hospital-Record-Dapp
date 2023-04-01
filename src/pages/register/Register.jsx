@@ -8,17 +8,22 @@ import {
   Button,
   FormControl,
   RadioGroup,
-  FormControlLabel
+  FormControlLabel,
+  TextField
 } from '@mui/material';
+import Patient from './Patient';
+import Doctor from './Doctor';
 
 function Register({ contract }) {
   const [opt, setOpt] = useState(null);
   // const [isPatient, setIspatient] = useState(true);
   const registerAsP = async (e) => {
     setOpt("P");
+    console.log(opt);
   };
   const registerAsD = (e) => {
     setOpt("D");
+    console.log(opt);
   };
 
   const add_patient = async (e) => {
@@ -85,8 +90,6 @@ function Register({ contract }) {
     //     )}
     //   </form>
     // </div>
-
-
     <Card
       variant="outlined"
       // sx={{ position:'inline-block' ,margin: 'auto', justifyContent: 'center' }}
@@ -97,7 +100,7 @@ function Register({ contract }) {
         width: '300px',
         transform: 'translate(-50%, -50%)',
         justifyContent: 'center',
-        padding: '5px',
+        padding: '20px',
         border: '#2b4e71 solid 2px ',
         textAlign: 'center',
         boxShadow: 'rgba(0, 0, 0, 0.35) 0px 5px 15px',
@@ -129,11 +132,11 @@ function Register({ contract }) {
           value={opt}
           onChange={(e) => setOpt(e.target.value)}
         >
-          <FormControlLabel value="P" control={<Radio />} label="Patient" />
-          <FormControlLabel value="D" control={<Radio />} label="Doctor" />
+          <FormControlLabel value="P" control={<Radio />} label="Patient" onClick={()=>{registerAsP()}}/>
+          <FormControlLabel value="D" control={<Radio />} label="Doctor" onClick={()=>{registerAsD()}}/>
         </RadioGroup>
       </FormControl>
-      <Button
+      {/* <Button
         variant="contained"
         sx={{ fontSize: '1.2rem', padding: '.6rem 1.2rem' }}
         style={{
@@ -141,10 +144,73 @@ function Register({ contract }) {
           boxShadow: '3px 3px 3px green',
           margin: '3px'
         }}
-        // onClick={opt==='P'?{registerAsP}:{registerAsD}}
+      //  onClick={()=>{
+      //   return opt=='P'?()=>{
+      //     console.log("ptient part connected");
+      //     <Patient></Patient>
+      //   }:()=>{
+      //     console.log("doctor part connected");
+
+      //     <Doctor></Doctor>
+      //   }
+      //  }}
+
       >
         Continue
-      </Button>
+      </Button> */}
+      {opt === 'P' &&
+      <Box>
+        <TextField fullWidth label="Full Name" id="pname" placeholder="Patient's Name"
+      sx={{margin:'5px'  }}
+      />
+      <TextField fullWidth label="Age" id="page"  placeholder="Patient's Age"
+      sx={{margin:'5px' }}
+      />
+        {/* <input type="text" id="pname" placeholder="Patient's Name" /> */}
+             {/* <input type="text" id="page" placeholder="Age" /> */}
+             <TextField fullWidth label="Email" placeholder="Patient's Email"
+      sx={{margin:'5px' }}
+      />
+             <Button type="submit"
+             variant="contained"
+             sx={{ fontSize: '1.2rem', padding: '.6rem 1.2rem' }}
+             style={{
+               backgroundColor: 'rgb(34, 139, 34)',
+               boxShadow: '3px 3px 3px green',
+               margin: '10px'
+             }}
+             >
+              <a style={{textDecoration:"none"}} href="/home" onClick={add_patient}>
+                Register
+               </a>
+             </Button>
+        </Box>}
+{opt === 'D' && <Box>
+        <TextField fullWidth label="Full Name" id="dname" placeholder="Doctor's Name"
+      sx={{margin:'5px' }}
+      />
+      <TextField fullWidth label="Age" id="dage"  placeholder="Doctor's Age"
+      sx={{margin:'5px' }}
+      />
+      <TextField fullWidth label="Email" placeholder="Doctor's Email"
+      sx={{margin:'5px' }}
+      />
+        {/* <input type="text" id="pname" placeholder="Patient's Name" /> */}
+             {/* <input type="text" id="page" placeholder="Age" /> */}
+             <Button type="submit"
+             variant="contained"
+             sx={{ fontSize: '1.2rem', padding: '.6rem 1.2rem' }}
+             style={{
+               backgroundColor: 'rgb(34, 139, 34)',
+               boxShadow: '3px 3px 3px green',
+               margin: '10px'
+             }}
+             >
+              <a style={{textDecoration:'none'}} href="/home" onClick={add_doctor}>
+                Register
+               </a>
+             </Button>
+        </Box>}
     </Card>
 
   );
