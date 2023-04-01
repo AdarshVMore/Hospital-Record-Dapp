@@ -1,4 +1,4 @@
-body {
+/* body {
   margin: 0;
   font-family: "Inter", sans-serif;
 }
@@ -29,4 +29,7 @@ a,
 button {
   color: white;
   text-decoration: none;
+} */
+:root{
+  background: #F9F6EE;
 }
