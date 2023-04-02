@@ -1,6 +1,11 @@
 import React from "react";
+import './access.css'
 import { useState, useEffect, useRef } from "react";
-
+import{
+  Box,
+  Stack,
+  Button
+} from '@mui/material';
 function Access({ contract, account }) {
   const [accessList, setAccessList] = useState([]);
 
@@ -23,24 +28,58 @@ function Access({ contract, account }) {
   }, [contract, account]);
 
   return (
-    <div>
-      <div className="access_top">
+    <Box
+    sx={{display:'flex',
+    alignItems:'center',
+    justifyContent:'center',
+    flexWrap: 'wrap',
+    padding:'15px'
+   }}>
+      <Stack
+      sx={{
+        // position: 'absolute',
+        // top: '50%',
+        // left: '50%',
+        // width: '300px',
+        // transform: 'translate(-50%, -50%)',
+        justifyContent: 'center',
+        padding: '5px',
+        border: '#2b4e71 solid 2px ',
+        textAlign: 'center',
+        boxShadow: 'rgba(0, 0, 0, 0.35) 0px 5px 15px',
+        background:'#F9F6EE'
+
+      }}
+      >
+      <Stack className="access_top"
+       direction={{ xs: 'column', sm: 'row' }}
+       spacing={{ xs: 1, sm: 2, md: 4 }}>
         <input
+
           className="access_address"
           type="text"
           placeholder="Enter Address"
           ref={accessAddressRef}
         />
-        <button onClick={givingAccess}>Give Access</button>
-      </div>
-      <div className="access_list">
+        <Button
+        variant="contained"
+        sx={{ padding: '.6rem 1.2rem' }}
+        style={{
+          backgroundColor: 'rgb(34, 139, 34)',
+          boxShadow: '3px 3px 3px green',
+          marginLeft: '10px'}}
+        onClick={givingAccess}>Give Access</Button>
+      </Stack>
+
         <p className="accessedAddresses">
           {accessList.map((item, index) => (
             <>
               {item === "0x0000000000000000000000000000000000000000" ? null : (
-                <>
+                <Stack className="access_list"  direction={{ xs: 'column', sm: 'row' }}
+                spacing={{ xs: 1, sm: 2, md: 10 }}>
                   <p key={index}>{item}</p>
-                  <button
+                  <Button
+                  variant="outlined" color="error"
                     onClick={async (e) => {
                       await contract.revoke_access(item);
                       const newList = [...accessList];
@@ -51,14 +90,15 @@ function Access({ contract, account }) {
                     key={index}
                   >
                     Revoke
-                  </button>{" "}
-                </>
+                  </Button>{" "}
+      </Stack>
+
               )}
             </>
           ))}
         </p>
-      </div>
-    </div>
+      </Stack>
+    </Box>
   );
 }
 
