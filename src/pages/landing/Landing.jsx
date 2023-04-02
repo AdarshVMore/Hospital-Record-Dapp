@@ -27,6 +27,7 @@ function Landing() {
           <Button variant="contained" size='large'
           sx={{ fontSize: '1.2rem', padding:'.6rem 1.2rem' }}
           style={{ backgroundColor: 'rgb(0, 255, 119)' , boxShadow: "3px 3px 3px green"}}
+          href='/home'
           >
             Login
           </Button>

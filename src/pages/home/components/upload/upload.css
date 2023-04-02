@@ -1,8 +1,12 @@
 .upload-form {
   display: flex;
+  align-items: center;
+  justify-content: center;
+  /* box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; */
+
 }
 
-.upload-form form {
+/* .upload-form form {
   display: flex;
   flex-direction: column;
 }
@@ -14,4 +18,24 @@
 .upload-form .label-input textarea {
   width: 20vw;
   resize: none;
+} */
+
+.left{
+  border: 2px solid #2b4e71;
+  padding: 10px;
+  text-align: center;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
+
+.heading{
+  font-size: 3rem;
+  margin-top: 0;
+  padding-top: 0;
+}
+.label-input{
+  margin: 10px;
+}
+label{
+  font-size: 1.5rem;
+}
+

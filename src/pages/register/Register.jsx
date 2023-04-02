@@ -11,8 +11,7 @@ import {
   FormControlLabel,
   TextField
 } from '@mui/material';
-import Patient from './Patient';
-import Doctor from './Doctor';
+
 
 function Register({ contract }) {
   const [opt, setOpt] = useState(null);
@@ -210,6 +209,7 @@ function Register({ contract }) {
                 Register
                </a>
              </Button>
+             <a href="/verify">Verify</a>
         </Box>}
     </Card>
 

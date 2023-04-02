@@ -1,4 +1,11 @@
 import React from "react";
+import{
+  Box,
+  Stack,
+  Button,
+  Typography
+} from '@mui/material';
+
 import { useState, useEffect, useRef } from "react";
 export let PAddressRef = "";
 
@@ -38,7 +45,7 @@ function TopNav({ contract, account }) {
       <button>
         <a href="home/upload">Upload Record</a>
       </button>
-      <p>{account ? account : "not connected"}</p>
+      <Typography  varaint='h5'>{account ? account : "not connected"}</Typography>
     </div>
   );
 }
