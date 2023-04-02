@@ -1,10 +1,5 @@
 import React from "react";
-import{
-  Box,
-  Stack,
-  Button,
-  Typography
-} from '@mui/material';
+import { Box, Stack, Button, Typography } from "@mui/material";
 
 import { useState, useEffect, useRef } from "react";
 export let PAddressRef = "";
@@ -12,7 +7,7 @@ export let PAddressRef = "";
 function TopNav({ contract, account }) {
   PAddressRef = useRef(null);
   const [isDoc, setIsDoc] = useState(false);
-  const [haveAccess, setHaveAccess] = useState(false);
+  const [haveAccess, setHaveAccess] = useState(!isDoc);
   const access = async () => {
     let address = document.getElementById("search").value;
     console.log(address);
@@ -60,7 +55,9 @@ function TopNav({ contract, account }) {
       <button>
         <a href={haveAccess ? "home/upload" : ""}>Upload Records</a>
       </button>
-      <Typography  varaint='h5'>{account ? account : "not connected"}</Typography>
+      <Typography varaint="h5">
+        {account ? account : "not connected"}
+      </Typography>
     </div>
   );
 }

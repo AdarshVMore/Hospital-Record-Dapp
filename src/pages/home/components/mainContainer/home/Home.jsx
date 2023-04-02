@@ -165,7 +165,11 @@ function Home({ contract, account }) {
                       Diagnosis: {record.diagnosis}
                     </Typography>
                     <Typography variant="h6">
-                      Reports: {record.report}
+                      {/* Reports: {record.report} */}
+                      Reports:{" "}
+                      <a href={`https://ipfs.io/ipfs/${record.report}`}>
+                        Reports
+                      </a>
                     </Typography>
                     <Typography variant="h6">
                       Treatment: {record.treatment}
@@ -176,7 +180,11 @@ function Home({ contract, account }) {
                     <Typography variant="h6">
                       Details: {record.details}
                     </Typography>
-                    <Typography variant="h6">Bills: {record.bill}</Typography>
+                    <Typography variant="h6">
+                      {/* Bills: {record.bill} */}
+                      Bills:{" "}
+                      <a href={`https://ipfs.io/ipfs/${record.bill}`}>Bills</a>
+                    </Typography>
                   </Stack>
                 ))
               : ""}
