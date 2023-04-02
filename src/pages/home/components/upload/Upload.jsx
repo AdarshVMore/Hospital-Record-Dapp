@@ -1,10 +1,18 @@
 import React from "react";
 import { useRef, useState } from "react";
 import "./upload.css";
-import { Box, Button, FormControl, Input, Stack, TextField, Typography,Banner } from '@mui/material';
-import styled from '@emotion/styled';
-import { NFTStorage, File, Blob } from "nft.storage";
-
+import {
+  Box,
+  Button,
+  FormControl,
+  Input,
+  Stack,
+  TextField,
+  Typography,
+  Banner,
+} from "@mui/material";
+import styled from "@emotion/styled";
+import { NFTStorage, Blob } from "nft.storage";
 
 const StyledBox = styled(Box)({
   position: 'absolute',
@@ -19,8 +27,8 @@ const StyledBox = styled(Box)({
   boxShadow: 'rgba(0, 0, 0, 0.35) 0px 5px 15px',
   background: '#F9F6EE',
   marginBottom: '3rem',
-});
 
+});
 
 function Upload({ contract }) {
   const PatientAddress = useRef(null);
@@ -30,6 +38,33 @@ function Upload({ contract }) {
   const treatmentRef = useRef(null);
   const medicationRef = useRef(null);
   const detailRef = useRef(null);
+  const NFT_STORAGE_TOKEN =
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJkaWQ6ZXRocjoweGY3ODMyQTkyZjgzMzYwRDYyNmQwNkU2MjAzOEM4NDkyNWEyYUIwRDciLCJpc3MiOiJuZnQtc3RvcmFnZSIsImlhdCI6MTY4MDQxNTYxNDg1MywibmFtZSI6Imhvc3BpdGFsLWRhcHAifQ.jwamWRhXby27Er2UsaoxSqikdZRSQSlB39CCR9c4S7Y";
+  const client = new NFTStorage({ token: NFT_STORAGE_TOKEN });
+  const [selectedFile, setSelectedFile] = useState(null);
+  const [ReportCID, setReportCID] = useState(null);
+  const [billCID, setbillCID] = useState(null);
+
+  let reportCid;
+  let billCid;
+
+  const getReportFile = async (e) => {
+    const file = e.target.files[0];
+    setSelectedFile(file);
+    const someData = new Blob([selectedFile]);
+    billCid = await client.storeBlob(someData);
+    console.log(billCid);
+    setbillCID(billCid.toString());
+  };
+
+  const getBillFile = async (e) => {
+    const file = e.target.files[0];
+    setSelectedFile(file);
+    const someData = new Blob([selectedFile]);
+    reportCid = await client.storeBlob(someData);
+    console.log(reportCid);
+    setReportCID(reportCid.toString());
+  };
 
   const addRecord = async (e) => {
     e.preventDefault();
@@ -42,8 +77,8 @@ function Upload({ contract }) {
       treatmentRef.current.value,
       medicationRef.current.value,
       detailRef.current.value,
-      "pdfHash",
-      "pdfHash"
+      ReportCID,
+      billCID
     );
 
     const addingRecord = await contract.add_record(
@@ -54,20 +89,17 @@ function Upload({ contract }) {
       treatmentRef.current.value,
       medicationRef.current.value,
       detailRef.current.value,
-      "pdfHash",
-      "pdfHash"
+      ReportCID,
+      billCID
     );
 
     console.log(addingRecord);
   };
 
   return (
-
-
     <div className="upload-form">
       <div className="left">
-
-          <h3 className="heading">Upload Record</h3>
+        <h3 className="heading">Upload Record</h3>
 
         <div className="inputs">
           <Stack>
@@ -181,19 +213,15 @@ function Upload({ contract }) {
             onClick={addRecord}>Add Record</Button>
 
           </form>
+
           </Stack>
         </div>
       </div>
-
     </div>
-
   );
 }
 
 export default Upload;
-
-
-
 
 // const UploadForm = () => {
 //   return (
@@ -202,4 +230,3 @@ export default Upload;
 // };
 
 // export default UploadForm;
-

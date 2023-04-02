@@ -4,6 +4,7 @@ import './topNav.css';
 import { useState, useEffect, useRef } from 'react';
 export let PAddressRef = '';
 
+
 function TopNav({ contract, account }) {
   PAddressRef = useRef(null);
   const [isDoc, setIsDoc] = useState(false);
@@ -101,6 +102,7 @@ function TopNav({ contract, account }) {
       </Typography>
       </Stack>
     </Box>
+
   );
 }
 
