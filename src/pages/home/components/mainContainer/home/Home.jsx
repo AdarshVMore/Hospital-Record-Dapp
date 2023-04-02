@@ -269,6 +269,57 @@ function Home({ contract, account }) {
                     <Typography variant="h6">Medication: {record.Medication}</Typography>
                     <Typography variant="h6">Details: {record.details}</Typography>
                     <Typography variant="h6">Bills: {record.bill}</Typography>
+                  <Stack
+                    key={i}
+                    className="article"
+                    direction="column"
+                    sx={{
+                      margin: "auto",
+                      justifyContent: "center",
+                      padding: "5px",
+                      border: "#2b4e71 solid 2px ",
+                      textAlign: "center",
+                      boxShadow: "rgba(0, 0, 0, 0.35) 0px 5px 15px",
+                      background: "#F9F6EE",
+                      width: "600px",
+                    }}
+                  >
+                    <Typography variant="h6">
+                      Patient Name: {patientInfo[0]}
+                    </Typography>
+                    <Typography variant="h6">
+                      Patient Address: {record.patientAddress}
+                    </Typography>
+                    <Typography variant="h6">
+                      Doctor Name: {record.doctorName}
+                    </Typography>
+                    <Typography variant="h6">
+                      Symptoms: {record.symptoms}
+                    </Typography>
+                    <Typography variant="h6">
+                      Diagnosis: {record.diagnosis}
+                    </Typography>
+                    <Typography variant="h6">
+                      {/* Reports: {record.report} */}
+                      Reports:{" "}
+                      <a href={`https://ipfs.io/ipfs/${record.report}`}>
+                        Reports
+                      </a>
+                    </Typography>
+                    <Typography variant="h6">
+                      Treatment: {record.treatment}
+                    </Typography>
+                    <Typography variant="h6">
+                      Medication: {record.Medication}
+                    </Typography>
+                    <Typography variant="h6">
+                      Details: {record.details}
+                    </Typography>
+                    <Typography variant="h6">
+                      {/* Bills: {record.bill} */}
+                      Bills:{" "}
+                      <a href={`https://ipfs.io/ipfs/${record.bill}`}>Bills</a>
+                    </Typography>
                   </Stack>
                 ))
               : ""}
