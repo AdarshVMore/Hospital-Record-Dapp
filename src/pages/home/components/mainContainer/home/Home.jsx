@@ -93,6 +93,7 @@ import { PAddressRef } from "../../topNav/TopNav";
 import {
   Stack, Typography,Box
  } from "@mui/material";
+
 function Home({ contract, account }) {
   const [isDoc, setIsDoc] = useState(false);
   const [patientInfo, setPatientInfo] = useState([]);
@@ -168,9 +169,7 @@ function Home({ contract, account }) {
                     <Typography variant="h6">Details: {record.details}</Typography>
                     <Typography variant="h6">Bills: {record.bill}</Typography>
                   </Stack>
-                ))
-              : ""}
-          </div>
+      
         </div>
       </div>
     </div>

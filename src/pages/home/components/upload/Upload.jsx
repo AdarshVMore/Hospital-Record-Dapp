@@ -3,6 +3,8 @@ import { useRef, useState } from "react";
 import "./upload.css";
 import { Box, Button, FormControl, Input, Stack, TextField, Typography,Banner } from '@mui/material';
 import styled from '@emotion/styled';
+import { NFTStorage, File, Blob } from "nft.storage";
+
 
 const StyledBox = styled(Box)({
   position: 'absolute',
@@ -19,8 +21,8 @@ const StyledBox = styled(Box)({
   marginBottom: '3rem',
 });
 
+
 function Upload({ contract }) {
-  const [pdfHash, setPdfHash] = useState(null);
   const PatientAddress = useRef(null);
   const DoctorNameRef = useRef(null);
   const symptomRef = useRef(null);
@@ -31,8 +33,7 @@ function Upload({ contract }) {
 
   const addRecord = async (e) => {
     e.preventDefault();
-    setPdfHash("thisisahash");
-console.log("record created");
+
     console.log(
       PatientAddress.current.value,
       DoctorNameRef.current.value,
@@ -178,6 +179,7 @@ console.log("record created");
             </div>
             <Button variant="contained" color="success" className="addrecord-btn"
             onClick={addRecord}>Add Record</Button>
+
           </form>
           </Stack>
         </div>
