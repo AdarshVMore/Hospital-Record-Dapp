@@ -15,18 +15,19 @@ import styled from "@emotion/styled";
 import { NFTStorage, Blob } from "nft.storage";
 
 const StyledBox = styled(Box)({
-  position: "absolute",
-  top: "56%",
-  left: "50%",
-  width: "60%",
-  transform: "translate(-50%, -50%)",
-  justifyContent: "center",
-  padding: "5px",
-  border: "#2b4e71 solid 2px ",
-  textAlign: "center",
-  boxShadow: "rgba(0, 0, 0, 0.35) 0px 5px 15px",
-  background: "#F9F6EE",
-  marginBottom: "3rem",
+  position: 'absolute',
+  top: '6%',
+  left: '50%',
+  width: '60%',
+  transform: 'translate(-50%, -50%)',
+  justifyContent: 'center',
+  padding: '5px',
+  border: '#2b4e71 solid 2px ',
+  textAlign: 'center',
+  boxShadow: 'rgba(0, 0, 0, 0.35) 0px 5px 15px',
+  background: '#F9F6EE',
+  marginBottom: '3rem',
+
 });
 
 function Upload({ contract }) {

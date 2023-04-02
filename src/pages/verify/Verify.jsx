@@ -49,29 +49,48 @@ import {
 
 function Verify() {
   return (
-    <Box sx={{ p: 2 , width:'400px', margin:'auto'}}>
+    <Box sx={{
+      marginTop:'7rem',
+      width:'400px',
+      margin:'auto',
+      justifyContent: 'center',
+      padding: '5px',
+      border: '#2b4e71 solid 2px ',
+      textAlign: 'center',
+      boxShadow: 'rgba(0, 0, 0, 0.35) 0px 5px 15px',
+      background:'#F9F6EE'
+                    // width:'600px'
+    }}>
       <Typography variant="h2">Verify</Typography>
       <form>
         <Grid container spacing={2}>
           <Grid item xs={12}>
-            <TextField fullWidth label="Add Degree &amp; certificates" name="file" />
+            <TextField fullWidth label="Add Degree & certificates" name="file" />
           </Grid>
           <Grid item xs={12}>
             <FormControl fullWidth>
-              <InputLabel>Clinic/Hospital Address</InputLabel>
-              <TextField multiline rows={4} />
+              {/* <InputLabel>Clinic/Hospital Address</InputLabel> */}
+              <TextField multiline rows={4}
+              placeholder='Clinic/Hospital Address'
+              label="Clinic/Hospital Address"
+              />
             </FormControl>
           </Grid>
           <Grid item xs={12}>
             <FormControl fullWidth>
-              <InputLabel>Write about your education and background</InputLabel>
-              <TextField multiline rows={4} />
+              {/* <InputLabel
+              placeholder='Write about your education and background'>Write about your education and background</InputLabel> */}
+              <TextField multiline rows={4}
+              label="Write about your education and background"
+              placeholder='Write about your education and background'
+              />
             </FormControl>
           </Grid>
           <Grid item xs={12} sm={6}>
             <FormControl fullWidth>
-              <InputLabel>Country Code</InputLabel>
-              <Select value="+91">
+              <InputLabel label="country code" >Country Code</InputLabel>
+              <Select
+               value="+91">
                 <MenuItem value="+91">+91</MenuItem>
               </Select>
             </FormControl>
@@ -80,7 +99,11 @@ function Verify() {
             <TextField fullWidth label="Phone Number" type="tel" />
           </Grid>
         </Grid>
-        <Button variant="contained" color="primary" href="/register">
+        <Button variant="contained"
+        color="success"
+        href="/register"
+        sx={{marginTop:'15px'}}
+        >
           Verify
         </Button>
       </form>

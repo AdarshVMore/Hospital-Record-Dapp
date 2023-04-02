@@ -31,5 +31,8 @@ button {
   text-decoration: none;
 } */
 :root{
-  background: #F9F6EE;
+
+  /* background: url('./pages/landing/images/healTracjk.jpeg') no-repeat  bottom; */
+  background-color: #F9F6EE;
+
 }
