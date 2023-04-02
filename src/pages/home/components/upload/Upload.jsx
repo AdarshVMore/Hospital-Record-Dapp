@@ -73,7 +73,7 @@ function Upload({ contract }) {
           <Stack>
           <form action="">
             <div className="label-input">
-            <Stack direction={{ xs: 'column', sm: 'row' }} spacing={{ xs: 1, sm: 2, md: 8 }} marginTop="1rem">
+            <Stack direction={{ xs: 'column', sm: 'row' }} spacing={{ xs: 1, sm: 2, md: 4 }} marginTop="1rem">
             <label htmlFor="address">Patient's Address :</label>
               <input
                 ref={PatientAddress}
@@ -87,7 +87,7 @@ function Upload({ contract }) {
 
             </div>
             <div className="label-input">
-              <Stack direction={{ xs: 'column', sm: 'row' }} spacing={{ xs: 1, sm: 2, md: 8 }} marginTop="1rem"><label htmlFor="address">Doctor's Name :</label>
+              <Stack direction={{ xs: 'column', sm: 'row' }} spacing={{ xs: 1, sm: 2, md: 6.2 }} marginTop="1rem"><label htmlFor="address">Doctor's Name :</label>
               <input
                 ref={DoctorNameRef}
                 type="text"
@@ -99,7 +99,7 @@ function Upload({ contract }) {
 
             </div>
             <div className="label-input">
-              <Stack direction={{ xs: 'column', sm: 'row' }} spacing={{ xs: 1, sm: 2, md: 8 }} marginTop="1rem"><label htmlFor="symptoms">Symptoms :</label>
+              <Stack direction={{ xs: 'column', sm: 'row' }} spacing={{ xs: 1, sm: 2, md: 11.2 }} marginTop="1rem"><label htmlFor="symptoms">Symptoms :</label>
               <textarea
                 ref={symptomRef}
                 type="text"
@@ -111,7 +111,7 @@ function Upload({ contract }) {
 
             </div>
             <div className="label-input">
-              <Stack direction={{ xs: 'column', sm: 'row' }} spacing={{ xs: 1, sm: 2, md: 8 }} marginTop="1rem"><label htmlFor="diagnosis">Diagnosis :</label>
+              <Stack direction={{ xs: 'column', sm: 'row' }} spacing={{ xs: 1, sm: 2, md: 12 }} marginTop="1rem"><label htmlFor="diagnosis">Diagnosis :</label>
               <textarea
                 ref={diagnosisRef}
                 type="text"
@@ -122,7 +122,7 @@ function Upload({ contract }) {
 
             </div>
             <div className="label-input">
-              <Stack direction={{ xs: 'column', sm: 'row' }} spacing={{ xs: 1, sm: 2, md: 8 }} marginTop="1rem">
+              <Stack direction={{ xs: 'column', sm: 'row' }} spacing={{ xs: 1, sm: 2, md: 12 }} marginTop="1rem">
               <label htmlFor="treatment">Treatment :</label>
               <textarea
                 ref={treatmentRef}
@@ -135,14 +135,14 @@ function Upload({ contract }) {
 
             </div>
             <div className="label-input">
-              <Stack direction={{ xs: 'column', sm: 'row' }} spacing={{ xs: 1, sm: 2, md: 8 }} marginTop="1rem">
+              <Stack direction={{ xs: 'column', sm: 'row' }} spacing={{ xs: 1, sm: 2, md: 10.5 }} marginTop="1rem">
               <label htmlFor="report">All Reports :</label>
               <input type="file" name="report" />
               </Stack>
 
             </div>
             <div className="label-input">
-            <Stack direction={{ xs: 'column', sm: 'row' }} spacing={{ xs: 1, sm: 2, md: 8 }} marginTop="1rem">
+            <Stack direction={{ xs: 'column', sm: 'row' }} spacing={{ xs: 1, sm: 2, md: 9.8 }} marginTop="1rem">
             <label htmlFor="medication">Medications :</label>
               <textarea
                 ref={medicationRef}
@@ -155,7 +155,7 @@ function Upload({ contract }) {
 
             </div>
             <div className="label-input">
-              <Stack direction={{ xs: 'column', sm: 'row' }} spacing={{ xs: 1, sm: 2, md: 8 }} marginTop="1rem">
+              <Stack direction={{ xs: 'column', sm: 'row' }} spacing={{ xs: 1, sm: 2, md: 17.7 }} marginTop="1rem">
               <label htmlFor="detail">Details</label>
               <textarea
                 ref={detailRef}
@@ -171,7 +171,7 @@ function Upload({ contract }) {
 
             </div>
             <div className="label-input">
-              <Stack direction={{ xs: 'column', sm: 'row' }} spacing={{ xs: 1, sm: 2, md: 8 }} marginTop="1rem">
+              <Stack direction={{ xs: 'column', sm: 'row' }} spacing={{ xs: 1, sm: 2, md: 14.5 }} marginTop="1rem">
               <label htmlFor="bill">All Bills :</label>
               <input type="file" name="bill" />
               </Stack>
