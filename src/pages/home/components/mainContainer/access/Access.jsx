@@ -32,6 +32,7 @@ function Access({ contract, account }) {
     sx={{display:'flex',
     alignItems:'center',
     justifyContent:'center',
+    marginTop:'12rem',
     flexWrap: 'wrap',
     padding:'15px'
    }}>
@@ -43,7 +44,7 @@ function Access({ contract, account }) {
         // width: '300px',
         // transform: 'translate(-50%, -50%)',
         justifyContent: 'center',
-        padding: '5px',
+        padding: '15px',
         border: '#2b4e71 solid 2px ',
         textAlign: 'center',
         boxShadow: 'rgba(0, 0, 0, 0.35) 0px 5px 15px',
@@ -75,11 +76,11 @@ function Access({ contract, account }) {
           {accessList.map((item, index) => (
             <>
               {item === "0x0000000000000000000000000000000000000000" ? null : (
-                <Stack className="access_list"  direction={{ xs: 'column', sm: 'row' }}
+                <Stack className="access_list" marginTop={'5px'} direction={{ xs: 'column', sm: 'row' }}
                 spacing={{ xs: 1, sm: 2, md: 10 }}>
                   <p key={index}>{item}</p>
                   <Button
-                  variant="outlined" color="error"
+                  variant="outlined" color="error" fontSize={'.5rem'}
                     onClick={async (e) => {
                       await contract.revoke_access(item);
                       const newList = [...accessList];

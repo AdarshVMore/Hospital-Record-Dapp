@@ -8,7 +8,7 @@ import { NFTStorage, File, Blob } from "nft.storage";
 
 const StyledBox = styled(Box)({
   position: 'absolute',
-  top: '56%',
+  top: '6%',
   left: '50%',
   width: '60%',
   transform: 'translate(-50%, -50%)',

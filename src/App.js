@@ -7,7 +7,7 @@ import Landing from "./pages/landing/Landing.jsx";
 import Register from "./pages/register/Register.jsx";
 import Verify from "./pages/verify/Verify.jsx";
 import Home from "./pages/home/Home.jsx";
-
+import PagenotFound from "./pages/landing/PagenotFound";
 function App() {
   const [account, setAccount] = useState("");
   const [contract, setContract] = useState("");
@@ -57,7 +57,9 @@ function App() {
               <Home account={account} provider={provider} contract={contract} />
             }
           />
+          <Route path='*' element={<PagenotFound />}/>
         </Routes>
+        {/* <PagenotFound></PagenotFound> */}
       </BrowserRouter>
     </div>
   );

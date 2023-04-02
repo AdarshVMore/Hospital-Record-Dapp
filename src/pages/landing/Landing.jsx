@@ -23,11 +23,11 @@ function Landing() {
          direction={{ xs: 'column', sm: 'row' }}
          spacing={{ xs: 1, sm: 2, md: 3 }}
          >
-          <Button variant="contained" size='large'
+          {/* <Button variant="contained" size='large'
           sx={{ fontSize: '1.2rem', padding:'.6rem 1.2rem' }}
           style={{ backgroundColor: 'rgb(0, 255, 119)' , boxShadow: "3px 3px 3px green"}}
-          href='/home'
-          >
+
+          ></Button> */}
             <Button
               variant="contained"
               size="large"
@@ -36,6 +36,7 @@ function Landing() {
                 backgroundColor: "rgb(0, 255, 119)",
                 boxShadow: "3px 3px 3px green",
               }}
+              href='/home'
             >
               Login
             </Button>
@@ -48,7 +49,7 @@ function Landing() {
               }}
               href="/register"
             >
-              Register..
+              Register
             </Button>
           </Stack>
         </Box>

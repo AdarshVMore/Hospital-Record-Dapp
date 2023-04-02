@@ -24,6 +24,8 @@ function Home({ account, provider, contract }) {
         <Route path="/record-info" element={<RecordInfo />} />
         <Route path="/upload" element={<Upload contract={contract} />} />
       </Routes>
+
+
     </div>
   );
 }
