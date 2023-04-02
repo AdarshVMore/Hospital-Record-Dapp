@@ -1,9 +1,9 @@
 import React from "react";
 import { useRef, useState } from "react";
 import "./upload.css";
+import { NFTStorage, File, Blob } from "nft.storage";
 
 function Upload({ contract }) {
-  const [pdfHash, setPdfHash] = useState(null);
   const PatientAddress = useRef(null);
   const DoctorNameRef = useRef(null);
   const symptomRef = useRef(null);
@@ -14,8 +14,6 @@ function Upload({ contract }) {
 
   const addRecord = async (e) => {
     e.preventDefault();
-
-    setPdfHash("thisisahash");
 
     console.log(
       PatientAddress.current.value,
@@ -131,10 +129,6 @@ function Upload({ contract }) {
                             How can he avoid it
                             Lifestyle he should adapt"
               ></textarea>
-            </div>
-            <div className="label-input">
-              <label htmlFor="bill">All Bills :</label>
-              <input type="file" name="bill" />
             </div>
             <button onClick={addRecord}>Add Record</button>
           </form>

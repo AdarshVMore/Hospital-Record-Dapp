@@ -5,7 +5,21 @@ export let PAddressRef = "";
 function TopNav({ contract, account }) {
   PAddressRef = useRef(null);
   const [isDoc, setIsDoc] = useState(false);
-
+  const [haveAccess, setHaveAccess] = useState(false);
+  const access = async () => {
+    let address = document.getElementById("search").value;
+    console.log(address);
+    const list = await contract.get_accessed_doctorlist_for_patient(address);
+    for (let i = 0; i < list.length; i++) {
+      if (account === list[i]) {
+        setHaveAccess(true);
+      } else {
+        setHaveAccess(false);
+      }
+    }
+    console.log(list);
+    console.log(haveAccess);
+  };
   useEffect(() => {
     const getDoctorList = async () => {
       const docList = await contract.get_doctor_list();
@@ -31,12 +45,13 @@ function TopNav({ contract, account }) {
               type="text"
               id="search"
               placeholder="Search for Address"
+              onChange={access}
             />
           </form>
         </>
       ) : null}
       <button>
-        <a href="home/upload">Upload Record</a>
+        <a href={haveAccess ? "home/upload" : ""}>Upload Records</a>
       </button>
       <p>{account ? account : "not connected"}</p>
     </div>

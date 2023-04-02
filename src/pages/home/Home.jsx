@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import TopNav from "./components/topNav/TopNav.jsx";
 import Nav2 from "./components/nav2/Nav2.jsx";
 import MainContainer from "./components/mainContainer/MainContainer.jsx";
