@@ -61,7 +61,6 @@
 //         <div className="records">
 //           <div className="article">
 
-
 //             {/* {patientInfo[2].map((record, i) => (
 //                <div key={i} className="article">
 //                 <p>Patient Address: {record.patientAddress}</p>
@@ -75,7 +74,6 @@
 //                 <p>Bills: {record.bill}</p>
 //               </div>
 //             ))} */}
-
 
 //           </div>
 //         </div>
@@ -184,6 +182,7 @@ import { PAddressRef } from "../../topNav/TopNav";
 import {
   Stack, Typography,Box, Button,
  } from "@mui/material";
+
 function Home({ contract, account }) {
   const [isDoc, setIsDoc] = useState(false);
   const [patientInfo, setPatientInfo] = useState([]);
@@ -237,8 +236,7 @@ function Home({ contract, account }) {
       </Button>
       <div>
         <div className="records">
-          <div className="article"
-      >
+          <div className="article">
             {click
               ? patientInfo[2].map((record, i) => (
                   <Stack key={i} className="article"
