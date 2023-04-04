@@ -1,3 +1,9 @@
+steps : Clone it => npm i => npm i react-router-dom => npm i ethers@5.7.2 => npm start
+Hosted : https://healthonchain.netlify.app/
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
